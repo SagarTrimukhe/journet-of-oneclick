@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: books-service-deployment
+  labels:
+    app: books-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: books-service
+  template:
+    metadata:
+      labels:
+        app: books-service
+    spec:
+      containers:
+      - name: books-svc
+        image: books:v1
+        ports:
+        - containerPort: 3000
