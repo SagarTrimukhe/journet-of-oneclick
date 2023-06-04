@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: books-svc
-        image: books:v1
+        image: sagardev/books:1.0
         ports:
         - containerPort: 3000

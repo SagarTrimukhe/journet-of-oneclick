@@ -1,29 +1,22 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: bookcart-ingress
+  name: oneclick-ingress
 spec:
   rules:
     - http:
         paths:
           - pathType: Prefix
-            path: /api/orders
+            path: /books
             backend:
               service:
-                name: orders-service
-                port:
-                  number: 8080
-          - pathType: Prefix
-            path: /user
-            backend:
-              service:
-                name: users-service
+                name: books-service
                 port:
                   number: 8081
           - pathType: Prefix
-            path: /product-catalog
+            path: /publishers
             backend:
               service:
-                name: catalogapi-service
+                name: publishers-service
                 port:
                   number: 8082
