@@ -4,6 +4,7 @@ metadata:
   name: oneclick-ingress
 spec:
   rules:
+    - host: oneclick.k8s.io
     - http:
         paths:
           - pathType: Prefix

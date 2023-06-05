@@ -24,3 +24,11 @@ sudo chmod 666 /var/run/docker.sock
 and then run minikube start
 To install kubectl 
 sudo snap install kubectl --classic
+
+
+Update the pem file permission
+chmod 400 oneclick.pem
+
+
+To enable ingress 
+minikube addons enable ingress
