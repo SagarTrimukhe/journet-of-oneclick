@@ -35,17 +35,17 @@ publishers = [
         "revenue": "$1.974 billion",
     },
     {
-        "id": "7effa4c9-d77b-47fc-8bff-c2e0c65bb5e4",
+        "id": "1cd0b1e5-0ee5-4bdb-b875-bf392c74c502",
         "name": "Springer Nature",
         "revenue": "$1.956 billion",
     },
     {
-        "id": "7effa4c9-d77b-47fc-8bff-c2e0c65bb5e4",
+        "id": "a34130ce-ab86-4383-92b2-4225119981e9",
         "name": "Scholastic",
         "revenue": "$1.742 billion",
     },
     {
-        "id": "7effa4c9-d77b-47fc-8bff-c2e0c65bb5e4",
+        "id": "586a5ef2-3008-4654-bbe5-b49c4b2ffd74",
         "name": "McGraw-Hill Education",
         "revenue": "$1.719 billion",
     },

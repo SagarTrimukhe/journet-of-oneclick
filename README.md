@@ -13,13 +13,15 @@ kubectl apply -f file_names
 
 ## Minikube debug issues on EC2
 Make sure minimum 2 core cpu instance is available (t2.medium)
-sudo minikube start --force to start the minikube
 
+### start the minikube
 If some JUJU_PERMISSION error run
 sudo sysctl fs.protected_regular=0
 
 Edit the permission of docker
 sudo chmod 666 /var/run/docker.sock
+
+sudo minikube start --force 
 
 and then run minikube start
 To install kubectl 
