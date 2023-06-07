@@ -28,6 +28,7 @@ function DemoPage() {
     const [showPublishersSpinner, setShowPublishersSpinner] = useState(false)
 
     const getBooksData = () => {
+
         setShowBooksSpinner(true)
         axios.get('http://localhost:80/books').then((response) => {
             console.log(response)
@@ -55,24 +56,24 @@ function DemoPage() {
                             <Box direction='row' align='center'>
                                 <Heading level='1'>{booksData?.metadata.title}</Heading>
                                 <Box width={"10%"}>
-                                    <Button primary onClick={getBooksData} icon={<Refresh/>} />
+                                    <Button primary onClick={getBooksData} icon={<Refresh />} />
                                 </Box>
                             </Box>
                             <DataTable
                                 primaryKey={"id"}
                                 columns={
                                     [
-                                        { property: "name", header: 'Book Name' },
-                                        { property: 'author', header: 'Author' }
+                                        { property: "name", header: <Text weight={'bold'}>Book Name</Text> },
+                                        { property: 'author', header: <Text weight={'bold'}>Author</Text> }
                                     ]
                                 }
                                 data={booksData?.items}
                             />
                         </Box>
                         :
-                        <Box height={'100%'}>
+                        <Box height={'100%'} margin='200px' width={'200px'}>
                             <Button label="Show books data" primary onClick={getBooksData} />
-                            {showBooksSpinner && <Box direction='row' gap='small'><Spinner /> <Text>Fetching...</Text></Box>}
+                            {showBooksSpinner && <Box direction='row' gap='small' margin={'large'} align='center' justify='center'><Spinner size='medium' /> <Text>Fetching...</Text></Box>}
                         </Box>
                     }
                 </Box>
@@ -83,24 +84,34 @@ function DemoPage() {
                             <Box direction='row' align='center'>
                                 <Heading level={1}>{publishersData?.metadata.title}</Heading>
                                 <Box width={"10%"}>
-                                    <Button  icon={<Refresh/>} primary onClick={getPublishersData} />
+                                    <Button icon={<Refresh />} primary onClick={getPublishersData} />
                                 </Box>
                             </Box>
                             <DataTable
                                 primaryKey={"id"}
                                 columns={
                                     [
-                                        { property: "name", header: 'Publisher Name' },
-                                        { property: 'revenue', header: 'Revenue' }
+                                        { property: "name", header: <Text weight={'bold'}>Publisher Name</Text> },
+                                        { property: 'revenue', header: <Text weight={'bold'}>Revenue</Text> }
                                     ]
                                 }
                                 data={publishersData?.items}
                             />
                         </Box>
                         :
-                        <Box height={'100%'}>
+                        <Box height={'100%'} margin='200px' width={'250px'}>
                             <Button label="Show publishers data" primary onClick={getPublishersData} />
-                            {showPublishersSpinner && <Box direction='row' gap='small'><Spinner /> <Text>Fetching...</Text></Box>}
+                            {showPublishersSpinner &&
+                                <Box
+                                    direction='row'
+                                    gap='small'
+                                    margin={'large'}
+                                    align='center'
+                                    justify='center'
+                                >
+                                    <Spinner size='medium' />
+                                    <Text>Fetching...</Text>
+                                </Box>}
                         </Box>
                     }
                 </Box>
