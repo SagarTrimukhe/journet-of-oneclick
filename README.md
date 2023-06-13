@@ -1,36 +1,55 @@
-# journet-of-oneclick
+# journey-of-a-click
+A simple project which demonstrates end to end development and deployment of a microservice based application.
 
-## To create docker images
-docker build -t sagardev/books:1.0 .
-docker build -t sagardev/publishers:1.0 .
+It is a monorepo that contains a react application, two simple backend services exposing APIs and kubernetes deployment files.
 
-## To push docker images to remote registry
-docker push sagardev/books:1.0
-docker push sagardev/publishers:1.0
+## Check individual service folders for more details.
 
-## apply the yaml files to bring upt the service.
-kubectl apply -f file_names
+## Steps to bring up the application locally.
+Prerequisites
+1. minikube or kubernetes. [Refer this page on how to bring up minikube](https://minikube.sigs.k8s.io/docs/start/)
+2. docker. [Refer this page on how to install Docker](https://docs.docker.com/engine/install/)
+3. nodejs runtime. [Refer this page on how to install node](https://nodejs.org/en/download)
 
-## Minikube debug issues on EC2
-Make sure minimum 2 core cpu instance is available (t2.medium)
-
-### start the minikube
-If some JUJU_PERMISSION error run
-sudo sysctl fs.protected_regular=0
-
-Edit the permission of docker
+1. Start the minikube
+```
+minikube start
+```
+Common errors:
+Edit the permission of docker if minikube is not able to reach docker daemon
+```
 sudo chmod 666 /var/run/docker.sock
+```
 
-sudo minikube start --force 
-
-and then run minikube start
-To install kubectl 
-sudo snap install kubectl --classic
-
-
-Update the pem file permission
-chmod 400 oneclick.pem
+If JUJU_PERMISSION file error. Run below command
+```
+sudo sysctl fs.protected_regular=0
+```
 
 
-To enable ingress 
+2. Bring up the backend microservices.
+```
+kubectl apply -f books-service/deployment-files/books-deployment.yaml
+kubectl apply -f books-service/deployment-files/books-service.yaml
+kubectl apply -f publishers-service/deployment-files/publisher-deployment.yaml
+kubectl apply -f publishers-service/deployment-files/publisher-service.yaml
+```
+
+3. Setup the ingress
+```
+kubectl apply -f books-service/deployment-files/ingress.yaml
+```
+Run below command if ingress is not avaiable in minikube
+```
 minikube addons enable ingress
+```
+
+4. Install the UI dependencies and start application
+```
+npm install && npm start
+```
+
+
+
+
+

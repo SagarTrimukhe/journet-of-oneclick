@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: books-service-deployment
-  labels:
-    app: books-service
 spec:
   replicas: 1
   selector:

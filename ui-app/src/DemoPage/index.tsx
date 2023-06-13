@@ -30,7 +30,7 @@ function DemoPage() {
     const getBooksData = () => {
 
         setShowBooksSpinner(true)
-        axios.get('http://localhost:80/books').then((response) => {
+        axios.get('http://44.211.134.43/books').then((response) => {
             console.log(response)
             setBooksData(response?.data)
             setShowBooksSpinner(false)
