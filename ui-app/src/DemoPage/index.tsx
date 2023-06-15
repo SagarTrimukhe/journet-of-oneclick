@@ -27,10 +27,11 @@ function DemoPage() {
     const [showBooksSpinner, setShowBooksSpinner] = useState(false)
     const [showPublishersSpinner, setShowPublishersSpinner] = useState(false)
 
+    const HOST="http://ec2-18-119-122-189.us-east-2.compute.amazonaws.com"
     const getBooksData = () => {
 
         setShowBooksSpinner(true)
-        axios.get('http://44.211.134.43/books').then((response) => {
+        axios.get(`${HOST}/books`).then((response) => {
             console.log(response)
             setBooksData(response?.data)
             setShowBooksSpinner(false)
@@ -39,7 +40,7 @@ function DemoPage() {
 
     const getPublishersData = () => {
         setShowPublishersSpinner(true)
-        axios.get('http://localhost:80/publishers').then((response) => {
+        axios.get(`${HOST}/publishers`).then((response) => {
             console.log(response)
             setPublishersData(response?.data)
             setShowPublishersSpinner(false)
