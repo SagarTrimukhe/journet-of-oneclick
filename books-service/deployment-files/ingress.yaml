@@ -4,7 +4,7 @@ metadata:
   name: oneclick-ingress
   annotations:
     nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "http://journey-of-a-click.s3-website-us-east-1.amazonaws.com"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET"
 spec:
   rules:

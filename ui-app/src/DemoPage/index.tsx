@@ -27,7 +27,7 @@ function DemoPage() {
     const [showBooksSpinner, setShowBooksSpinner] = useState(false)
     const [showPublishersSpinner, setShowPublishersSpinner] = useState(false)
 
-    const HOST="http://ec2-18-119-122-189.us-east-2.compute.amazonaws.com"
+    const HOST="http://ec2-3-133-131-10.us-east-2.compute.amazonaws.com"
     const getBooksData = () => {
 
         setShowBooksSpinner(true)
