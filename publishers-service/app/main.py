@@ -2,7 +2,6 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-
 publishers = [
     {
         "id": "9d8dde26-b60a-40c6-8893-900e7a4ef8fc",
@@ -51,7 +50,6 @@ publishers = [
     },
 ]
 
-
 @app.get("/publishers", status_code=200)
 def get_publishers():
     return {
@@ -60,4 +58,4 @@ def get_publishers():
             "title": "The Ten Largest Publishing Companies in the World",
             "source": "https://www.tharawat-magazine.com/facts/ten-largest-publishing-companies/",
         },
-    }
+}

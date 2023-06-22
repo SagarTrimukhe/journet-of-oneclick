@@ -17,9 +17,16 @@ const books = [
 ]
 
 app.get('/books', (req, res) => {
-  res.send({ items: books, metadata: { "title": "10 Most Popular Books of All Time", "source": "https://earlybirdbooks.com/most-popular-books" } })
+  res.send({
+    items: books,
+    metadata: {
+      "title": "10 Most Popular Books of All Time",
+      "source": "https://earlybirdbooks.com/most-popular-books"
+    }
+  })
 })
 
 app.listen(port, () => {
   console.log(`Books app listening on port ${port}`)
 })
+
