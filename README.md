@@ -21,6 +21,10 @@ Edit the permission of docker if minikube is not able to reach docker daemon
 sudo chmod 666 /var/run/docker.sock
 ```
 
+alias kubectl="minikube kubectl --"
+
+sudo systemctl start nginx
+
 If JUJU_PERMISSION file error. Run below command
 ```
 sudo sysctl fs.protected_regular=0
