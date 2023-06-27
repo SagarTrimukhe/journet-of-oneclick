@@ -29,7 +29,6 @@ function DemoPage() {
 
     const HOST="http://ec2-3-144-100-189.us-east-2.compute.amazonaws.com"
     const getBooksData = () => {
-
         setShowBooksSpinner(true)
         axios.get(`${HOST}/books`).then((response) => {
             console.log(response)
@@ -48,7 +47,7 @@ function DemoPage() {
     }
 
     return (
-        <Box height={'100vh'}>
+        <Box height={'90vh'}>
             <Box width={'100%'} height="100px" background={'grey'}></Box>
             <Box direction='row' gap='small' width={"100%"} height='100%'>
                 <Box width={'50%'} align='center' border>

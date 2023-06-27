@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Grommet } from 'grommet';
+import { Anchor, Grommet, Box } from 'grommet';
 import DemoPage from './DemoPage';
 
 function App() {
@@ -8,6 +8,12 @@ function App() {
     <div className="App">
      <Grommet>
       <DemoPage/>
+      <Box margin={'20px'}>
+        <Anchor 
+          href={"https://forms.gle/XW8PLFjzEEg2JPKj9"}
+          target="_blank"
+        >Click here to provide Feedback</Anchor>
+      </Box>
      </Grommet>
     </div>
   );
